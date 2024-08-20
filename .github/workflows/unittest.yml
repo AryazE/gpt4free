@@ -24,19 +24,3 @@ jobs:
     - name: Report results
       if: always()
       uses: AryazE/auto-dylin/report@main
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.12"
-        cache: 'pip'
-    - name: Install requirements
-      run: |
-        pip install -r requirements.txt
-        pip uninstall -y nodriver
-    - name: Instrument code
-      uses: AryazE/auto-dylin/instrument@main
-    - name: Run tests
-      run: python -m etc.unittest
-    - name: Report results
-      if: always()
-      uses: AryazE/auto-dylin/report@main
